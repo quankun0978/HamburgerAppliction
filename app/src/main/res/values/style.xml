@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="background_default">
+        <item name="background">@color/white</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:paddingHorizontal">@dimen/text_size_md</item>
+    </style>
+    <style name="float_btn">
+        <item name="backgroundTint">@color/white</item>
+        <item name="tint">@color/red_300</item>
+    </style>
+</resources>

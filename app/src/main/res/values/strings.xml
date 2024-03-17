@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">BunBuzz</string>
+    <string name="back">back</string>
+    <string name="login">Đăng nhập</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="register">Đăng ký</string>
+    <string name="contine_client">Tiếp tục như khách vãng lai</string>
+    <string name="login_to_endow">Đăng nhập để nhận thêm ưu đãi</string>
+    <string name="forgot_password">Quên mật khẩu</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="or">Hoặc</string>
+    <string name="contine_google">Tiếp tục với google</string>
+    <string name="no_account">Bạn chưa có tài khoản ?</string>
+    <string name="have_account">Bạn đã có tài khoản ?</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="otp">Mã OTP</string>
+    <string name="resend_otp">Gửi lại mã OTP</string>
+    <string name="reset_password">Nhập mật khẩu mới</string>
+    <string name="confirm_password">Nhập lại mật khẩu</string>
+    <string name="name">Họ và tên</string>
+    <string name="address">Địa chỉ</string>
+    <string name="facebook">facebook</string>
+    <string name="instagram">instagram</string>
+    <string name="setting">Cài đặt</string>
+    <string name="change_password">Đổi mật khẩu</string>
+    <string name="account">Tài khoản</string>
+    <string name="update_information">Cập nhật thông tin</string>
+    <string name="update">Cập nhật</string>
+    <string name="order_tracking">Theo dõi đơn hàng</string>
+    <string name="tab1">Đang đến</string>
+    <string name="tab2">Lịch sử</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id">262433207185-26hadmdi1lv5hlqlklmsah57ig167ujv.apps.googleusercontent.com</string>
+
+
+</resources>

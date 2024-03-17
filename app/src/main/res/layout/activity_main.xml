@@ -1,0 +1,80 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/text_size_xl"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/text_size_md"
+        android:layout_gravity="top"
+        android:id="@+id/linearLayout"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txt_app_name"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/text_size_xl"
+                android:fontFamily="@font/lobster_regular"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/app_name"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_sub_title"
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:text="Xin chào quý khách!"
+                android:textSize="@dimen/text_size_md"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="@dimen/text_size_lg"
+            android:layout_height="@dimen/text_size_lg"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bell" />
+    </LinearLayout>
+    <FrameLayout
+        android:layout_marginTop="@dimen/text_size_lg"
+        android:id="@+id/framelayout"
+        android:paddingHorizontal="@dimen/text_size_md"
+        android:layout_marginVertical="90sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <!-- Rest of the code -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:id="@+id/bottom_app_bar_home"
+        android:backgroundTint="@color/red_300"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleVerticalOffset="10dp">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
+            app:menu="@menu/menu_home"
+            android:layout_gravity="bottom"
+            android:background="@drawable/ic_transparent_background"
+            android:layout_marginEnd="16dp">
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

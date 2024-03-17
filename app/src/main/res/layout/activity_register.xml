@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+   >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/text_size_md"
+        tools:context=".activity.RegisterActivity">
+
+        <TextView
+            android:id="@+id/title_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_xxl"
+            android:fontFamily="@font/lobster_regular"
+            android:gravity="center"
+            android:text="@string/register"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xl"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginTop="@dimen/text_size_lg" />
+
+
+
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_xxl"
+            android:layout_marginTop="@dimen/text_size_lg"
+            android:background="@drawable/ic_launcher_edt"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/name"
+            android:paddingStart="@dimen/text_size_md"
+            android:ems="10"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_login"
+            tools:ignore="RtlSymmetry" />
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_xxl"
+            android:layout_marginTop="@dimen/text_size_lg"
+            android:background="@drawable/ic_launcher_edt"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/email"
+            android:paddingStart="@dimen/text_size_md"
+            android:ems="10"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_name"
+            tools:ignore="RtlSymmetry"
+            android:autofillHints="" />
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_xxl"
+            android:layout_marginTop="@dimen/text_size_lg"
+            android:background="@drawable/ic_launcher_edt"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/phone"
+            android:paddingStart="@dimen/text_size_md"
+            android:ems="10"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email" />
+        <EditText
+            android:id="@+id/edt_address"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_xxl"
+            android:layout_marginTop="@dimen/text_size_lg"
+            android:background="@drawable/ic_launcher_edt"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/address"
+            android:paddingStart="@dimen/text_size_md"
+            android:ems="10"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_phone"
+            android:autofillHints=""
+            tools:ignore="RtlSymmetry" />
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_xxl"
+            android:layout_marginTop="@dimen/text_size_lg"
+            android:background="@drawable/ic_launcher_edt"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/password"
+            android:paddingStart="@dimen/text_size_md"
+            android:ems="10"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_address" />
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_lg"
+            android:height="54dp"
+            android:backgroundTint="@color/red_300"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/text_size_sm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="314dp"
+            android:layout_height="@dimen/text_size_xl"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="@dimen/text_size_lg"
+            android:gravity="start"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_register">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/text_size_lg"
+                android:layout_gravity="start"
+                android:layout_marginTop="56dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/have_account"
+                android:textSize="@dimen/text_size_md"
+                tools:ignore="TextSizeCheck" />
+            <TextView
+                android:id="@+id/txt_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:fontFamily="@font/roboto_black"
+                android:text="@string/login"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_size_md"
+                android:layout_marginStart="4dp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+        <ProgressBar
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="37dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="@dimen/text_size_sm"
+            android:background="@color/white"
+            android:contentDescription="@string/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_arrow_back_24"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
