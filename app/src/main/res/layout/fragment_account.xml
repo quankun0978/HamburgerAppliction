@@ -10,57 +10,45 @@
     tools:context=".fragment.AccountFragment"
     tools:ignore="ExtraText">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:fontFamily="@font/lobster_regular"
-        android:gravity="center"
-        android:text="@string/account"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_size_xxl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
+
+    <LinearLayout
         android:id="@+id/frameLayout"
-        android:layout_width="354dp"
-        android:layout_height="205dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:background="@drawable/ic_launcher_edt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="121dp"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/img_size"
+            android:layout_height="@dimen/img_size"
             android:layout_margin="@dimen/text_size_lg"
             android:src="@drawable/hamburger" />
 
         <FrameLayout
-            android:layout_width="167dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|right|end"
             android:layout_margin="@dimen/text_size_md">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="92dp"
+                android:layout_height="wrap_content"
                 android:gravity="center|center_horizontal"
                 android:orientation="vertical">
-
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Xin chào bạn"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_lg" />
+                    android:textSize="@dimen/text_size_md" />
 
                 <TextView
                     android:id="@+id/textView14"
@@ -68,18 +56,18 @@
                     android:layout_height="wrap_content"
                     android:text="Tớ là BunBuzz!"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_lg" />
+                    android:textSize="@dimen/text_size_md" />
             </LinearLayout>
         </FrameLayout>
 
-    </FrameLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_tracking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/text_size_lg"
         android:layout_marginEnd="32dp"
         android:width="@dimen/text_size_lg"
         android:backgroundTint="@color/gray"
@@ -101,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/text_size_lg"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/gray"
         android:drawableEnd="@drawable/baseline_lock_person_24"
@@ -120,7 +108,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/text_size_lg"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/gray"
         android:drawableEnd="@drawable/baseline_edit_square_24"
@@ -133,23 +121,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_change_pw" />
 
-    <ImageButton
-        android:id="@+id/btn_setting"
-        android:layout_width="43dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/white"
-        android:contentDescription="@string/setting"
-        android:scaleType="fitCenter"
-        android:src="@drawable/setting"
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="@dimen/text_size_lg"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/gray"
+        android:drawableEnd="@drawable/baseline_logout_24"
+        android:gravity="center|start"
+        android:drawableTint="@color/black"
+        android:text="@string/logout"
+        android:textColor="@color/black"
+        app:cornerRadius="@dimen/text_size_sm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_edit_acc" />
 
-=======
-    tools:context=".activity.AddProductActivity">
 
->>>>>>> main
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

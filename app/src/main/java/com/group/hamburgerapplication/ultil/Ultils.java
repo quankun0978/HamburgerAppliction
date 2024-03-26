@@ -1,10 +1,12 @@
 package com.group.hamburgerapplication.ultil;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
 import com.group.hamburgerapplication.activity.MainActivity;
+import com.group.hamburgerapplication.database.UserDatabase;
 
 public class Ultils {
     public static   void changeIntent (Context context1 , Context context2){
@@ -17,5 +19,11 @@ public class Ultils {
     }
     public static String convertPhone( String phone) {
         return "+84"+phone.substring(1);
+    }
+    void handleRedirectLogin(Context context, Activity activity){
+        if(!UserDatabase.checkLogin()){
+            Intent intent  = new Intent(context,activity.getClass());
+
+        }
     }
 }

@@ -26,7 +26,7 @@ public class OrderTrackingActivity extends AppCompatActivity {
         mTabLayout = findViewById(R.id.tabLayout);
         mViewPager2.setAdapter(mAdapter);
 
-         new TabLayoutMediator(mTabLayout, mViewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
+        new TabLayoutMediator(mTabLayout, mViewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 tab.setText(OrderTrackingActivity.this.getResources().getString(mTabTitles[position]));

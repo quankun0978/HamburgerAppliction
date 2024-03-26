@@ -1,65 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:backgroundTint="@null"
+    android:gravity="center_horizontal"
+    style="@style/layout"
+    android:orientation="vertical"
     tools:context=".activity.IntroduceActivity">
     <ImageView
         android:id="@+id/img_introduce"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="0dp"
+        android:layout_weight="7"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-       android:src="@drawable/burger_introduce"
+        android:paddingTop="@dimen/text_size_xxl"
+       android:src="@drawable/shipper1"
         android:contentDescription="@string/app_name" />
    <LinearLayout
-       android:paddingHorizontal="@dimen/text_size_md"
-       app:layout_constraintTop_toBottomOf="@+id/img_introduce"
-       app:layout_constraintLeft_toLeftOf="parent"
        android:layout_width="match_parent"
        android:orientation="vertical"
+       android:gravity="center_horizontal"
+       android:layout_weight="1"
+       android:paddingTop="@dimen/text_size_sm"
        android:backgroundTint="@null"
        android:layout_height="wrap_content"
        app:layout_constraintStart_toStartOf="parent">
-       <TextView
-           android:id="@+id/textView2"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textColor="@color/black"
-           android:layout_marginTop="@dimen/text_size_md"
-           android:fontFamily="@font/lobster_regular"
-           android:text="@string/login_to_endow"
-           android:textSize="@dimen/text_size_xl"
-           android:textStyle="bold" />
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:orientation="vertical"
+         android:gravity="center_horizontal"
+         android:layout_height="wrap_content">
+         <TextView
+             android:id="@+id/textView2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textColor="@color/black"
+             android:layout_marginTop="@dimen/text_size_sm"
+             android:text="The Fastest Food"
+             android:textSize="@dimen/text_size_lg"
+             android:textStyle="bold" />
+         <TextView
+             android:id="@+id/textView3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textColor="@color/black"
+             android:text="Delivery App In Town"
+             android:textSize="@dimen/text_size_lg"
+             android:textStyle="bold" />
+         <TextView
+             android:id="@+id/textView4"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textColor="#9A9A98"
+             android:textStyle="bold"
+             android:layout_marginTop="@dimen/text_size_md"
+             android:text="Pick your desired food item from the menu"
+             android:textSize="12dp"
+             />
+         <TextView
+             android:id="@+id/textView5"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textColor="#9A9A98"
+             android:textStyle="bold"
+             android:text="There are more than 200 item"
+             android:textSize="12dp"
 
-       <Button
-           android:id="@+id/btn_login"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="8dp"
-           android:height="50dp"
-           android:backgroundTint="@color/red_300"
-           app:cornerRadius="@dimen/text_size_sm"
-           android:text="@string/login"
-           android:textColor="@color/white" />
+             />
+     </LinearLayout>
 
-       <Button
-           android:id="@+id/btn_continue"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="8dp"
-           android:height="50dp"
-           android:backgroundTint="@color/white"
-           android:text="@string/contine_client"
-           android:textColor="@color/red_300"
-           app:cornerRadius="@dimen/text_size_sm"
-           app:strokeColor="@color/red_300"
-           app:strokeWidth="1dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="@dimen/text_size_xl"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_size_lg"
+                style="@style/btn_normal"
+                android:text="@string/login"
+                />
+
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/contine_client"
+                style="@style/btn_stroke_white"
+
+                />
+        </LinearLayout>
+
    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

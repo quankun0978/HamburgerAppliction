@@ -15,12 +15,9 @@ import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
     private List<Product> listProducts;
-
-
     public ProductAdapter(List<Product> listProducts) {
         this.listProducts = listProducts;
     }
-
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -31,12 +28,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = listProducts.get(position);
-        if(product==null) {
+        if (product == null) {
             return;
         }
-        holder.txt_id.setText( product.getName());
-        holder.txt_name.setText("Giá :"+product.getPrice());
+        // Đảm bảo các thành phần UI cho mục chẵn và lẻ đều được cập nhật
+            holder.txt_price.setText("1.99$");
+            holder.txt_name.setText(product.getName());
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -45,11 +45,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     public class ProductViewHolder extends RecyclerView.ViewHolder{
-        private TextView txt_id ,txt_name;
+        private TextView txt_price ,txt_name;
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
-            txt_id=itemView.findViewById(R.id.txt_id);
-            txt_name=itemView.findViewById(R.id.txt_name);
+            txt_price = itemView.findViewById(R.id.price_product);
+            txt_name=itemView.findViewById(R.id.name_product);
+
         }
     }
 }

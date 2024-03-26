@@ -8,17 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.auth.api.identity.BeginSignInRequest;
-import com.google.android.gms.auth.api.identity.SignInClient;
-import com.google.android.gms.auth.api.identity.SignInCredential;
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -31,7 +27,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.database.FirebaseDatabase;
 import com.group.hamburgerapplication.R;
 import com.group.hamburgerapplication.database.UserDatabase;
 import com.group.hamburgerapplication.ultil.FuncHelper;
@@ -69,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         googleSignInClient = GoogleSignIn.getClient(getApplicationContext(), googleSignInOptions);
     }
     void initListener(){
-
         txt_forgot_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,8 +145,7 @@ public class LoginActivity extends AppCompatActivity {
                     // Check condition
                 } catch (ApiException e) {
                     Log.e("ERR", e.toString());
-                    Toast.makeText(getApplicationContext(),"ERR",Toast.LENGTH_SHORT).show();
-
+                    progressBar.setVisibility(View.INVISIBLE);
                     e.printStackTrace();
                 }
             }

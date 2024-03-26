@@ -1,4 +1,4 @@
-package com.group.hamburgerapplication.entity;
+package com.group.hamburgerapplication.entity.entity;
 
 import java.io.Serializable;
 

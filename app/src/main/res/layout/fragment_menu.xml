@@ -1,16 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/menu"
-    tools:context=".fragment.MenuFragment">
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/rxfhyz99s04"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:orientation="horizontal">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textColor="@color/black"
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/r6xxgz729ukq"
+            android:textColor="#181725"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Thực đơn"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <ImageView
+            android:id="@+id/ryigvh46fwo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/shopping_cart"
+            android:scaleType="fitXY"
+            />
+    </LinearLayout>
+    <ScrollView
+        android:fillViewport="true"
+        android:id="@+id/rngeboypetsr"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello menu" />
+        android:layout_weight="1"
+        android:background="#FFffffff"
+        android:layout_marginVertical="12dp"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_product"
+            android:layout_width="match_parent"
+            android:paddingHorizontal="@dimen/text_size_md"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_md" />
 
-</FrameLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/layout_progress_bar"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:backgroundTint="@color/red_300"
+            android:layout_width="50dp"
+            android:id="@+id/progressbar"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
+

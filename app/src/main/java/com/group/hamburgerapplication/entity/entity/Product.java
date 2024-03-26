@@ -1,11 +1,8 @@
-package com.group.hamburgerapplication.entity;
-
-import com.google.gson.annotations.SerializedName;
+package com.group.hamburgerapplication.entity.entity;
 
 public class Product {
-
     private String productId,name,description,category ,path;
-        private int price;
+    private int price;
 
     public Product() {
     }

@@ -10,7 +10,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.group.hamburgerapplication.adapter.ProductAdapter;
 import com.group.hamburgerapplication.entity.Product;
-import com.group.hamburgerapplication.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -34,19 +34,7 @@ public class SettingFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_setting, container, false);
 
         btn_logout = view.findViewById(R.id.btn_logout);
-        if(UserDatabase.checkLogin()){
-            btn_logout.setVisibility(View.VISIBLE);
-            btn_logout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Hiển thị Toast khi button được nhấn
-                    handleLogout();
-                }
-            });
-        }
-        else {
-            btn_logout.setVisibility(View.INVISIBLE);
-        }
+
 
         return view;
     }
@@ -62,9 +50,5 @@ public class SettingFragment extends Fragment {
 //            }
 //        });
 //    }
-    void handleLogout(){
-        FirebaseAuth.getInstance().signOut();
-        Intent intent  = new Intent(getContext(), LoginActivity.class);
-        startActivity(intent);
-    }
+
 }

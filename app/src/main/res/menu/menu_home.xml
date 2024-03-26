@@ -6,16 +6,16 @@
 
     </item>
 
-    <item  android:title="Giam giá" android:id="@+id/voucher"  android:icon="@drawable/voucher" >
+    <item  android:title="Thực đơn" android:id="@+id/menu"  android:icon="@drawable/burger" >
 
     </item>
-    <item android:title="Thực đơn"   android:id="@+id/menu"  android:icon="@drawable/burger" >
+    <item android:title=""   android:enabled="false" >
+
+    </item>
+    <item  android:title="Giảm giá" android:id="@+id/voucher"  android:icon="@drawable/voucher" >
 
     </item>
     <item  android:title="Tài khoản" android:id="@+id/account"  android:icon="@drawable/account" >
-
-    </item>
-    <item  android:title="Cài đặt" android:id="@+id/setting"  android:icon="@drawable/setting" >
 
     </item>
 </menu>

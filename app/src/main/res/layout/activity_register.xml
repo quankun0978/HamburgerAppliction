@@ -12,7 +12,6 @@
         android:background="@color/white"
         android:paddingHorizontal="@dimen/text_size_md"
         tools:context=".activity.RegisterActivity">
-
         <TextView
             android:id="@+id/title_login"
             android:layout_width="match_parent"
@@ -24,112 +23,130 @@
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_xl"
             android:textStyle="bold"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_goneMarginTop="@dimen/text_size_lg" />
-
-
-
-
-        <EditText
-            android:id="@+id/edt_name"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wrapper_layout_name"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/text_size_xxl"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/text_size_lg"
-            android:background="@drawable/ic_launcher_edt"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:inputType="text"
-            android:fontFamily="@font/roboto_regular"
-            android:hint="@string/name"
-            android:paddingStart="@dimen/text_size_md"
-            android:ems="10"
-            android:text=""
+            android:hint="Họ và tên"
+            style="@style/layout_edt"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_login"
-            tools:ignore="RtlSymmetry" />
-        <EditText
-            android:id="@+id/edt_email"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_size_lg"
+                android:inputType="text"
+                android:id="@+id/edt_name"
+                style="@style/edt"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wrapper_layout_email"
+            style="@style/layout_edt"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/text_size_xxl"
-            android:layout_marginTop="@dimen/text_size_lg"
-            android:background="@drawable/ic_launcher_edt"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:inputType="textEmailAddress"
-            android:fontFamily="@font/roboto_regular"
-            android:hint="@string/email"
-            android:paddingStart="@dimen/text_size_md"
-            android:ems="10"
-            android:text=""
+            android:layout_height="wrap_content"
+            
+            
+            android:hint="Email"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_name"
-            tools:ignore="RtlSymmetry"
-            android:autofillHints="" />
-        <EditText
-            android:id="@+id/edt_phone"
+
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_layout_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_email"
+                style="@style/edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_size_lg"
+
+                android:inputType="text|textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wrapper_layout_phone"
+            style="@style/layout_edt"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/text_size_xxl"
-            android:layout_marginTop="@dimen/text_size_lg"
-            android:background="@drawable/ic_launcher_edt"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:inputType="text"
-            android:fontFamily="@font/roboto_regular"
-            android:hint="@string/phone"
-            android:paddingStart="@dimen/text_size_md"
-            android:ems="10"
-            android:text=""
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_layout_email"
+            android:layout_height="wrap_content"
+            
+            
+            android:hint="Số điện thoại"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_email" />
-        <EditText
-            android:id="@+id/edt_address"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_phone"
+                style="@style/edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_size_lg"
+
+                android:inputType="text|textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wrapper_layout_address"
+            style="@style/layout_edt"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/text_size_xxl"
-            android:layout_marginTop="@dimen/text_size_lg"
-            android:background="@drawable/ic_launcher_edt"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:inputType="text"
-            android:fontFamily="@font/roboto_regular"
+            android:layout_height="wrap_content"
+            
+            
             android:hint="@string/address"
-            android:paddingStart="@dimen/text_size_md"
-            android:ems="10"
-            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_phone"
-            android:autofillHints=""
-            tools:ignore="RtlSymmetry" />
-        <EditText
-            android:id="@+id/edt_password"
+
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_layout_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_address"
+                style="@style/edt"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/text_size_lg"
+
+                android:layout_height="wrap_content"
+                android:inputType="text|textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wrapper_layout_password"
+            style="@style/layout_edt"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/text_size_xxl"
-            android:layout_marginTop="@dimen/text_size_lg"
-            android:background="@drawable/ic_launcher_edt"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:inputType="textPassword"
-            android:fontFamily="@font/roboto_regular"
+            android:layout_height="wrap_content"
+            
+            
             android:hint="@string/password"
-            android:paddingStart="@dimen/text_size_md"
-            android:ems="10"
-            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_address" />
+
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_layout_address">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password"
+                style="@style/edt"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/text_size_lg"
+
+                android:layout_height="wrap_content"
+                android:inputType="text|textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
         <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/text_size_lg"
-            android:height="54dp"
-            android:backgroundTint="@color/red_300"
+            style="@style/btn_normal"
+            
             android:text="@string/register"
-            android:textColor="@color/white"
-            app:cornerRadius="@dimen/text_size_sm"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_layout_password" />
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="314dp"
