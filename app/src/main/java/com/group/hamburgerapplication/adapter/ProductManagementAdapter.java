@@ -1,5 +1,4 @@
 package com.group.hamburgerapplication.adapter;
-
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -11,9 +10,8 @@ import com.group.hamburgerapplication.fragment.AddProduct;
 import com.group.hamburgerapplication.fragment.ComingFragment;
 import com.group.hamburgerapplication.fragment.EditProduct;
 import com.group.hamburgerapplication.fragment.HistoryFragment;
-
-public class ViewPagerAdapter extends FragmentStateAdapter {
-    public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+public class ProductManagementAdapter extends FragmentStateAdapter{
+    public ProductManagementAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 
@@ -22,9 +20,9 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         Log.d("POSITION", String.valueOf(position));
         if(position==0){
-            return ComingFragment.newInstance();
+            return AddProduct.newInstance();
         }
-        return HistoryFragment.newInstance();
+        return EditProduct.newInstance();
     }
     @Override
     public int getItemCount() {

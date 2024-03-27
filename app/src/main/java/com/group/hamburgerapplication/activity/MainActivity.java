@@ -8,17 +8,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationBarView;
 import com.group.hamburgerapplication.R;
-import com.group.hamburgerapplication.database.UserDatabase;
 import com.group.hamburgerapplication.databinding.ActivityMainBinding;
 //import com.group.hamburgerapplication.fragment.AccountFragment;
 import com.group.hamburgerapplication.fragment.AccountFragment;
 import com.group.hamburgerapplication.fragment.HomeFragment;
 import com.group.hamburgerapplication.fragment.MenuFragment;
-import com.group.hamburgerapplication.fragment.SettingFragment;
 import com.group.hamburgerapplication.fragment.VoucherFragment;
 
 public class MainActivity extends AppCompatActivity {

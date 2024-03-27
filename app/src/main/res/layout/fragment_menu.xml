@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#FFFFFFFF"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -34,15 +35,16 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             />
+
         <ImageView
             android:id="@+id/ryigvh46fwo"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/shopping_cart"
             android:scaleType="fitXY"
-            />
+            android:src="@drawable/shopping_cart"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
     <ScrollView
         android:fillViewport="true"

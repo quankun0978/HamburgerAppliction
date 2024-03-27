@@ -14,7 +14,7 @@
         android:layout_marginTop="64dp"
         android:fontFamily="@font/lobster_regular"
         android:gravity="center"
-        android:text="@string/order_tracking"
+        android:text="@string/product_management"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_xl"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +53,7 @@
             android:id="@+id/tab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đang đến"
+            android:text="@string/add_dishes"
             tools:layout_editor_absoluteX="3dp"
             tools:layout_editor_absoluteY="match_parent" />
 
@@ -61,7 +61,7 @@
             android:id="@+id/tab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lịch sử" />
+            android:text="@string/edit_dishes" />
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -79,15 +79,15 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
-        android:layout_width="400dp"
-        android:layout_height="500dp"
-        android:layout_marginTop="@dimen/text_size_xxl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="157dp"
         android:foregroundGravity="fill_horizontal|center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        app:layout_constraintVertical_bias="0.432" />
+        app:layout_constraintVertical_bias="0.143" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,7 +39,8 @@
              android:layout_marginTop="@dimen/text_size_sm"
              android:text="The Fastest Food"
              android:textSize="@dimen/text_size_lg"
-             android:textStyle="bold" />
+             android:textStyle="bold"
+             tools:ignore="HardcodedText" />
          <TextView
              android:id="@+id/textView3"
              android:layout_width="wrap_content"
@@ -48,26 +49,28 @@
              android:text="Delivery App In Town"
              android:textSize="@dimen/text_size_lg"
              android:textStyle="bold" />
+
          <TextView
              android:id="@+id/textView4"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:textColor="#9A9A98"
-             android:textStyle="bold"
              android:layout_marginTop="@dimen/text_size_md"
              android:text="Pick your desired food item from the menu"
+             android:textColor="#9A9A98"
              android:textSize="12dp"
-             />
+             android:textStyle="bold"
+             tools:ignore="TextSizeCheck" />
+
          <TextView
              android:id="@+id/textView5"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:textColor="#9A9A98"
-             android:textStyle="bold"
              android:text="There are more than 200 item"
+             android:textColor="#9A9A98"
              android:textSize="12dp"
+             android:textStyle="bold"
 
-             />
+             tools:ignore="TextSizeCheck" />
      </LinearLayout>
 
         <LinearLayout
@@ -92,7 +95,6 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/contine_client"
                 style="@style/btn_stroke_white"
-
                 />
         </LinearLayout>
 
