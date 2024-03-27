@@ -4,18 +4,27 @@ import java.io.Serializable;
 
 public  class User implements Serializable  {
 
-   private String id,email,password,name,address,phone;
+   private String id,email,password,name,address,phone,role;
 
     public User() {
     }
 
-    public User(String id, String name, String email, String phone, String address, String password) {
+    public User(String id, String name, String email, String phone, String address, String password ,String role) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
         this.address = address;
         this.phone = phone;
+        this.role=role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getId() {

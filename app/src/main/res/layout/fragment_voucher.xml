@@ -1,16 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/voucher"
+    android:paddingTop="12dp"
+    android:paddingHorizontal="@dimen/text_size_md"
+    android:orientation="vertical"
     tools:context=".fragment.VoucherFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:textColor="@color/black"
-        android:layout_height="match_parent"
-        android:text="Hello voucher" />
 
-</FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:scaleType="fitCenter"
+            android:id="@+id/img_shipper"
+            android:src="@drawable/fast_delivery"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/title_free_shhip"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_md"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/text_size_sm"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Voucher miễn phí vận chuyển" />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/rcv_voucher_free_ship"
+        android:layout_marginTop="@dimen/text_size_md"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/discounts"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/title_sale_product"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_md"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/text_size_sm"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Voucher giảm giá" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/rcv_voucher_sale_product"
+        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content" />
+<!--    <ProgressBar-->
+<!--        android:backgroundTint="@color/red_300"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:id="@+id/progressbar"-->
+<!--        android:layout_height="50dp"/>-->
+</LinearLayout>

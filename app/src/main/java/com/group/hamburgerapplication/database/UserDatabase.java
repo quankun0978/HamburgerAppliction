@@ -22,7 +22,7 @@ public class UserDatabase {
         return user;
     }
     public static void writeNewUser(String id, String name, String email, String phone, String address, String password) {
-        User user = new User(id, name, email, phone, address, password);
+        User user = new User(id, name, email, phone, address, password,"user");
         mDatabase.child("user").child(id).setValue(user);
     }
     public static FirebaseUser getCurrentUser() {

@@ -2,6 +2,8 @@ package com.group.hamburgerapplication.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -16,9 +18,13 @@ import android.widget.TextView;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.group.hamburgerapplication.R;
 
 import com.group.hamburgerapplication.database.UserDatabase;
+import com.group.hamburgerapplication.entity.User;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -96,7 +102,29 @@ public class HomeFragment extends Fragment {
 
     void initListener(){
         if(UserDatabase.checkLogin()){
-            txt_email.setText(UserDatabase.getCurrentUser().getEmail().toString());
+
+            UserDatabase.getUserByEmail(UserDatabase.getCurrentUser().getEmail().toString(), getContext(), new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    User user = dataSnapshot.getValue(User.class);
+                    if(user!=null){
+                        txt_email.setText("Xin chào "+user.getName());
+                    }
+                }
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                }
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                }
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
         }
     }
     void handleChangeSlide(){
@@ -110,7 +138,6 @@ public class HomeFragment extends Fragment {
         imageList.add(new SlideModel("https://res.cloudinary.com/da8l8b4tg/image/upload/v1711464851/logo2_ny8ugg.png", null,ScaleTypes.FIT));
         imageList.add(new SlideModel("https://res.cloudinary.com/da8l8b4tg/image/upload/v1711464852/logo3_xxuvif.png", null,ScaleTypes.FIT));
         imageList.add(new SlideModel("https://res.cloudinary.com/da8l8b4tg/image/upload/v1711464850/logo4_m3oosj.jpg", null,ScaleTypes.FIT));
-
         ImageSlider imageSlider = view.findViewById(R.id.image_slider);
         imageSlider.setImageList(imageList);
     }
