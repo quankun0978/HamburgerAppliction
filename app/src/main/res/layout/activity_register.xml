@@ -8,7 +8,7 @@
    >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/white"
         android:paddingHorizontal="@dimen/text_size_md"
         tools:context=".activity.RegisterActivity">
@@ -53,12 +53,9 @@
             style="@style/layout_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            
-            
             android:hint="Email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-
             app:layout_constraintTop_toBottomOf="@+id/wrapper_layout_name">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -67,8 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/text_size_lg"
-
-                android:inputType="text|textPassword" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/wrapper_layout_phone"
@@ -89,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/text_size_lg"
 
-                android:inputType="text|textPassword" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/wrapper_layout_address"
@@ -109,29 +105,24 @@
                 style="@style/edt"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="@dimen/text_size_lg"
-
                 android:layout_height="wrap_content"
-                android:inputType="text|textPassword" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/wrapper_layout_password"
             style="@style/layout_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            
-            
+            app:endIconMode="password_toggle"
             android:hint="@string/password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-
             app:layout_constraintTop_toBottomOf="@+id/wrapper_layout_address">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_password"
                 style="@style/edt"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="@dimen/text_size_lg"
-
                 android:layout_height="wrap_content"
                 android:inputType="text|textPassword" />
         </com.google.android.material.textfield.TextInputLayout>

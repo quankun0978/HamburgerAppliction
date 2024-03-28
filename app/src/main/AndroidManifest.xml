@@ -2,16 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.group.hamburgerapplication">
-
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+
 
     <application
         android:allowBackup="true"
@@ -25,6 +26,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+
             android:name=".activity.MapShopActivity"
             android:exported="false" />
         <activity
@@ -42,9 +44,7 @@
         <activity
             android:name=".activity.CartActivity"
             android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".activity.TestApi" -->
-        <!-- android:exported="false" > -->
-        <!-- </activity> -->
+
         <activity
             android:name=".activity.OrderTrackingActivity"
             android:exported="false" />
@@ -83,6 +83,12 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="false" />
-    </application>
+        </application>
+        <!-- <activity -->
 
-</manifest>
+        <!-- android:name=".activity.TestApi" -->
+        <!-- android:exported="false" > -->
+        <!-- </activity> -->
+
+    </manifest>
+

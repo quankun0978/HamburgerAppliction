@@ -10,5 +10,7 @@
     <color name="pink_300">#FF939B</color>
     <color name="red_300">#EF2A39</color>
     <color name="gray_300">#808080</color>
-    <color name ="orange"> #FF8C00</color>>
+    <color name ="orange"> #FF8C00</color>
+    <color name="gray_200">#6C6B6B</color>
+    <color name="gray_400">#7D7D7D</color>
 </resources>
