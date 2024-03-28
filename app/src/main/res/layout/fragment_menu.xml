@@ -14,8 +14,6 @@
         android:gravity="center_vertical"
         android:paddingHorizontal="16dp"
         android:orientation="horizontal">
-
-
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -46,6 +44,10 @@
             android:src="@drawable/shopping_cart"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Tìm kiếm"
+        android:layout_height="wrap_content"/>
     <ScrollView
         android:fillViewport="true"
         android:id="@+id/rngeboypetsr"
@@ -61,7 +63,6 @@
             android:paddingHorizontal="@dimen/text_size_md"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/text_size_md" />
-
     </ScrollView>
     <LinearLayout
         android:id="@+id/layout_progress_bar"

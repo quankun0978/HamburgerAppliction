@@ -98,6 +98,8 @@ public class AccountFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 handleLogout();
+
+
             }
         });
         return view;
@@ -116,6 +118,8 @@ public class AccountFragment extends Fragment {
         FirebaseAuth.getInstance().signOut();
         Intent intent  = new Intent(getContext(), LoginActivity.class);
         startActivity(intent);
+
+
     }
     void handleRedireactLogin(){
        if(!UserDatabase.checkLogin()){

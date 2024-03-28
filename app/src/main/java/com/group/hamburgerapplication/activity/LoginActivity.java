@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -36,7 +37,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextView txt_forgot_password,txt_register;
     private EditText edt_email,edt_password;
     private ProgressBar progressBar;
-    private Button btn_continue_google ,btn_login;
+    private Button btn_continue_google ,btn_login ;
+    ImageView img_back;
     private FirebaseAuth mAuth;
     private GoogleSignInClient googleSignInClient;
 
@@ -49,9 +51,11 @@ public class LoginActivity extends AppCompatActivity {
         initListener();
     }
     void init(){
+
         txt_forgot_password=findViewById(R.id.txt_forgot_password);
         btn_continue_google=findViewById(R.id.btn_continue_google);
         btn_login=findViewById(R.id.btn_login);
+        img_back=findViewById(R.id.btn_back);
         txt_register=findViewById(R.id.txt_register);
         edt_email=findViewById(R.id.edt_email);
         edt_password=findViewById(R.id.edt_password);
@@ -93,6 +97,12 @@ public class LoginActivity extends AppCompatActivity {
                 // Start activity for result
                 startActivityForResult(intent, 100);
                 progressBar.setVisibility(View.VISIBLE);
+            }
+        });
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

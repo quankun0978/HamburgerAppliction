@@ -38,10 +38,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="default_web_client_id">262433207185-26hadmdi1lv5hlqlklmsah57ig167ujv.apps.googleusercontent.com</string>
+
     <string name="product_management">Quản lý sản phẩm</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="add_product">Thêm</string>
+
+    <string name="_30000">2330000</string>
+
 
 
 </resources>
