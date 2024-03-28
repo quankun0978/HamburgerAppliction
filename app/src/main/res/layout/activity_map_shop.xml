@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
+    android:layout_gravity="center_horizontal"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
@@ -17,14 +18,15 @@
 
     <Button
         android:id="@+id/btn_oder2"
+        style="@style/btn_normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_size_lg"
-        style="@style/btn_normal"
         android:text="Tiến hành đặt hàng"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_more" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_more"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
 

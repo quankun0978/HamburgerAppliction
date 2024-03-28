@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -14,7 +15,8 @@
         android:layout_height="50dp"
         android:backgroundTint="@color/white"
         android:scaleType="centerInside"
-        android:src="@drawable/baseline_arrow_back_24">
+        android:src="@drawable/baseline_arrow_back_24"
+        tools:ignore="SpeakableTextPresentCheck">
 
     </ImageButton>
 
@@ -216,7 +218,8 @@
             android:layout_marginTop="8dp"
             android:text="15 000đ"
             android:textColor="@color/black"
-            android:textSize="15dp">
+            android:textSize="15dp"
+            tools:ignore="TextSizeCheck">
 
         </TextView>
 
@@ -287,7 +290,8 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/white"
             android:scaleType="centerInside"
-            android:src="@drawable/voucher">
+            android:src="@drawable/voucher"
+            tools:ignore="SpeakableTextPresentCheck">
 
         </ImageButton>
 
@@ -299,7 +303,8 @@
             android:text="Mã giảm giá"
             android:textSize="20dp"
             android:layout_marginLeft="30dp"
-            android:textColor="@color/black">
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText,RtlHardcoded,SpUsage">
 
         </TextView>
 
@@ -322,7 +327,8 @@
         android:layout_height="2sp"
         android:layout_marginTop="10dp"
         android:background="@color/gray_300"
-        android:backgroundTint="@color/gray_300">
+        android:backgroundTint="@color/gray_300"
+        tools:ignore="SmallSp">
 
     </FrameLayout>
 
@@ -339,7 +345,8 @@
             android:text="Muỗng nĩa bằng nhựa"
             android:textColor="@color/gray_300"
             android:textSize="18dp"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,RtlHardcoded,SpUsage">
 
         </TextView>
 
@@ -360,14 +367,16 @@
         android:text="Burger BunBuzz giảm thiểu rác thải nhựa,
                                         chỉ yêu cầu muỗng nĩa khi bạn cần"
         android:textColor="@color/gray_300"
-        android:textSize="20dp"></TextView>
+        android:textSize="20dp"
+        tools:ignore="HardcodedText,SpUsage"></TextView>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="2sp"
         android:layout_marginTop="10dp"
         android:background="@color/gray_300"
-        android:backgroundTint="@color/gray_300">
+        android:backgroundTint="@color/gray_300"
+        tools:ignore="SmallSp">
 
     </FrameLayout>
 
@@ -384,7 +393,8 @@
             android:text="Tổng"
             android:textColor="@color/red_300"
             android:textSize="25dp"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,SpUsage">
 
         </TextView>
 
@@ -437,7 +447,8 @@
         android:layout_height="2sp"
         android:layout_marginTop="10dp"
         android:background="@color/gray_300"
-        android:backgroundTint="@color/gray_300">
+        android:backgroundTint="@color/gray_300"
+        tools:ignore="SmallSp">
 
     </FrameLayout>
 
