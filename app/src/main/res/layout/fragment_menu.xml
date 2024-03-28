@@ -46,7 +46,14 @@
     </LinearLayout>
     <EditText
         android:layout_width="match_parent"
+        android:background="@drawable/ic_launcher_edt"
+        android:height="36dp"
         android:hint="Tìm kiếm"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray_200"
+       android:textSize="12sp"
+        android:padding="@dimen/text_size_sm"
+        android:layout_marginHorizontal="@dimen/text_size_sm"
         android:layout_height="wrap_content"/>
     <ScrollView
         android:fillViewport="true"
@@ -64,18 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/text_size_md" />
     </ScrollView>
-    <LinearLayout
-        android:id="@+id/layout_progress_bar"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_height="match_parent">
-        <ProgressBar
-            android:backgroundTint="@color/red_300"
-            android:layout_width="50dp"
-            android:id="@+id/progressbar"
-            android:layout_height="50dp"/>
-    </LinearLayout>
+
 
 
 

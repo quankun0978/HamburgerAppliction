@@ -36,12 +36,13 @@
 
     <LinearLayout
         android:orientation="horizontal"
+        android:id="@+id/layout_map_ship"
         android:layout_marginHorizontal="@dimen/text_size_md"
         android:background="@drawable/ic_launcher_btn"
         android:elevation="@dimen/text_size_md"
-        android:backgroundTint="@color/white"
         android:padding="@dimen/text_size_sm"
         android:layout_width="match_parent"
+        android:gravity="center_vertical"
         android:layout_marginBottom="@dimen/text_size_md"
         android:layout_height="wrap_content">
         <ImageView
@@ -72,17 +73,18 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:src="@drawable/backarrow"
-            android:scaleType="fitEnd"
-            android:backgroundTint="@color/white"
+
+           android:background="@color/bg_color_hover"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
+        android:id="@+id/layout_map_home"
         android:layout_marginHorizontal="@dimen/text_size_md"
         android:background="@drawable/ic_launcher_btn"
-        android:backgroundTint="@color/white"
         android:elevation="@dimen/text_size_md"
+        android:gravity="center_vertical"
         android:padding="@dimen/text_size_sm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -114,8 +116,8 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:src="@drawable/backarrow"
+            android:background="@color/bg_color_hover"
             android:scaleType="fitEnd"
-            android:backgroundTint="@color/white"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.group.hamburgerapplication.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.denzcoskun.imageslider.ImageSlider;
@@ -23,6 +25,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.group.hamburgerapplication.R;
 
+import com.group.hamburgerapplication.activity.MapShopActivity;
+import com.group.hamburgerapplication.activity.MapUserActivity;
 import com.group.hamburgerapplication.database.UserDatabase;
 import com.group.hamburgerapplication.entity.User;
 
@@ -37,7 +41,7 @@ import java.util.Objects;
 public class HomeFragment extends Fragment {
     private View view;
     private TextView txt_email;
-
+    private LinearLayout layout_map_ship,layout_map_home;
     public static HomeFragment newInstance(String param1, String param2) {
         HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
@@ -61,7 +65,8 @@ public class HomeFragment extends Fragment {
         return view;
     }
     void init(){
-
+        layout_map_ship=view.findViewById(R.id.layout_map_ship);
+        layout_map_home=view.findViewById(R.id.layout_map_home);
         txt_email=view.findViewById(R.id.txt_sub_title);
         LinearLayoutManager layoutManager
                 = new GridLayoutManager(getContext(),2);
@@ -126,6 +131,20 @@ public class HomeFragment extends Fragment {
                 }
             });
         }
+        layout_map_ship.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MapShopActivity.class);
+                 startActivity(intent);
+            }
+        });
+        layout_map_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MapUserActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     void handleChangeSlide(){
         ArrayList<SlideModel> imageList = new ArrayList<>(); // Create image list

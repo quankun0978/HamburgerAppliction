@@ -37,9 +37,11 @@
                     android:textColor="@color/pink_300"
                     android:layout_height="wrap_content"/>
 
-                <ImageView
+                <ImageButton
                     android:layout_width="@dimen/text_size_lg"
                     android:layout_height="@dimen/text_size_lg"
+                    android:background="@color/bg_color_hover"
+                    android:id="@+id/notification"
                     android:scaleType="fitCenter"
                     android:src="@drawable/notification"
                      />
@@ -89,9 +91,5 @@
         android:src="@drawable/shopping_cart"
         app:layout_anchor="@id/bottom_app_bar_home" />
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Switch" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

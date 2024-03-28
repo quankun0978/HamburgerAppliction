@@ -1,33 +1,29 @@
 package com.group.hamburgerapplication.fragment;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.group.hamburgerapplication.R;
-import com.group.hamburgerapplication.adapter.ProductAdapter;
 import com.group.hamburgerapplication.adapter.VoucherFoodAdapter;
 import com.group.hamburgerapplication.adapter.VoucherTranspotAdapter;
 import com.group.hamburgerapplication.entity.Voucher;
-import com.group.hamburgerapplication.entity.Voucher;
-import com.group.hamburgerapplication.ultil.Ultils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +42,8 @@ public class VoucherFragment extends Fragment {
     private static List<Voucher> listVouchersFood  ;
     private static RecyclerView rcvVoucherFood,rcvVoucherTranspot;
     private static VoucherFoodAdapter voucherFoodAdapter;
+
+    private static Dialog dialog;
     public VoucherFragment() {
         // Required empty public constructor
     }
@@ -74,7 +72,18 @@ public class VoucherFragment extends Fragment {
         return view;
     }
     void init(){
-
+        dialog = new Dialog(requireActivity());
+        dialog.setContentView(R.layout.activity_progress);
+        dialog.setCancelable(false); // Đặt cho Dialog không bị hủy khi nhấn nút Back
+        Window window = dialog.getWindow();
+        if (window != null) {
+            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+            layoutParams.copyFrom(window.getAttributes());
+            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+            layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
+            window.setAttributes(layoutParams);
+        }
+        dialog.show();
         rcvVoucherTranspot = view.findViewById(R.id.rcv_voucher_free_ship);
         rcvVoucherFood = view.findViewById(R.id.rcv_voucher_sale_product);
 //        linearLayoutManager=view.findViewById(R.id.layout_progress_bar);
@@ -107,6 +116,7 @@ public class VoucherFragment extends Fragment {
                 Voucher voucher = snapshot.getValue(Voucher.class);
 
                 if(voucher!=null){
+                    dialog.dismiss();
                   if(Objects.equals(voucher.getType(), "transpot")){
                       listVouchersTranspot.add(voucher);
                       voucherTranspotAdapter.notifyDataSetChanged();
@@ -133,6 +143,7 @@ public class VoucherFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                dialog.show();
             }
         });
 
