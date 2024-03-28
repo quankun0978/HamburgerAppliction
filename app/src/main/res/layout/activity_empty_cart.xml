@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/btn_backEmpty"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:backgroundTint="@color/white">
+
+    </ImageButton>
+    <TextView
+        android:id="@+id/title_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/lobster_regular"
+        android:text="Giỏ hàng"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_xl"
+        android:textStyle="bold">
+
+    </TextView>
+    <TextView
+        android:id="@+id/txtEmpty1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giỏ hàng của bạn đang trống
+                      Hãy thêm các sản phẩm vào giỏ hàng"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/gray_300"
+        android:paddingLeft="40dp">
+
+    </TextView>
+    <ImageView
+        android:id="@+id/img_Empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/emptybox"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center">
+
+    </ImageView>
+
+</LinearLayout>
