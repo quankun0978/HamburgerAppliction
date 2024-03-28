@@ -4,13 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,11 +36,11 @@ import com.group.hamburgerapplication.ultil.FuncHelper;
 import com.group.hamburgerapplication.ultil.Ultils;
 
 public class RegisterActivity extends AppCompatActivity {
+    private TextView txt_login;
     private  Button btn_register;
     private  EditText edt_name,edt_email,edt_address,edt_phone,edt_password;
-    private ProgressBar progressBar;
     private FirebaseAuth mAuth;
-
+    private Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,35 +49,56 @@ public class RegisterActivity extends AppCompatActivity {
         initListener();
     }
     void init(){
+        txt_login=findViewById(R.id.txt_login);
         btn_register=findViewById(R.id.btn_register);
         edt_email=findViewById(R.id.edt_email);
         edt_name=findViewById(R.id.edt_name);
         edt_address=findViewById(R.id.edt_address);
         edt_password=findViewById(R.id.edt_password);
         edt_phone=findViewById(R.id.edt_phone);
-        progressBar=findViewById(R.id.progress_bar);
         mAuth = FirebaseAuth.getInstance();
     }
     void initListener(){
+        dialog = new Dialog(RegisterActivity.this);
+        dialog.setContentView(R.layout.activity_progress);
+        dialog.setCancelable(false); // Đặt cho Dialog không bị hủy khi nhấn nút Backq
+        Window window = dialog.getWindow();
+        if (window != null) {
+            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+            layoutParams.copyFrom(window.getAttributes());
+            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+            layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
+            ((Window) window).setAttributes(layoutParams);
+        }
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 handleOnClickRegister();
             }
         });
+        txt_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     void handleOnClickRegister(){
         if(FuncHelper.validateName(edt_name.getText().toString(),getApplicationContext())&&FuncHelper.validateEmail(edt_email.getText().toString(),getApplicationContext())&&FuncHelper.validatePhone(edt_phone.getText().toString(),getApplicationContext())&&FuncHelper.validatePhone(edt_phone.getText().toString(),getApplicationContext())&&FuncHelper.validatePassword(edt_password.getText().toString(),getApplicationContext())){
+
             UserDatabase.getUserByEmail(edt_email.getText().toString(), getApplicationContext(), new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    dialog.show();
                     User user = dataSnapshot.getValue(User.class);
                     if(user!=null){
                         Ultils.displayToast(getApplicationContext(),"Email này đã tồn tại trong hệ thống");
-                        return;
                     }
-                   handleCreateUser(edt_email.getText().toString(),edt_password.getText().toString());
-                    progressBar.setVisibility(View.VISIBLE);
+                    else {
+                        Ultils.displayToast(getApplicationContext(),"hihi");
+                        handleCreateUser(edt_email.getText().toString(),edt_password.getText().toString());
+                    }
                 }
                 @Override
                 public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -86,6 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
+                    dialog.show();
                 }
             });
         }
@@ -96,18 +122,15 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            dialog.dismiss();
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d("TEST", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            progressBar.setVisibility(View.INVISIBLE);
                             UserDatabase.writeNewUser( user.getUid().toString(),edt_name.getText().toString(),edt_email.getText().toString(),edt_phone.getText().toString(),edt_address.getText().toString(),edt_password.getText().toString());
                             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
                             startActivity(intent);
-                            finish();
+
                         } else {
                             // If sign in fails, display a message to the user.
-                            progressBar.setVisibility(View.INVISIBLE);
-                            Log.w("TEST", "createUserWithEmail:failure", task.getException());
                             Toast.makeText(getApplicationContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }

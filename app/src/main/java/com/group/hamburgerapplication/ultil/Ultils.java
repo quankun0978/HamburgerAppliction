@@ -3,9 +3,9 @@ package com.group.hamburgerapplication.ultil;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.view.View;
 import android.widget.Toast;
 
-import com.group.hamburgerapplication.activity.MainActivity;
 import com.group.hamburgerapplication.database.UserDatabase;
 
 public class Ultils {
@@ -25,5 +25,8 @@ public class Ultils {
             Intent intent  = new Intent(context,activity.getClass());
 
         }
+    }
+    public static void handleBack(Activity activity) {
+        activity.onBackPressed();
     }
 }

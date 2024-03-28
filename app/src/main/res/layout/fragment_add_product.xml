@@ -1,0 +1,111 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.AddProduct">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/text_size_md"
+            android:layout_marginRight="@dimen/text_size_md"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/add_img"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/add" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/text_size_sm"
+                    android:layout_weight="1"
+                    android:text="Món ăn và hình ảnh chất lượng cao (không nhoè,mờ)"
+                    android:textColor="@color/gray_300" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/layout_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_size_lg"
+                android:layout_marginBottom="@dimen/text_size_lg"
+                android:hint="Tên sản phẩm"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/gray_300">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_name_product"
+                    style="@style/edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/layout_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_size_lg"
+                android:hint="Mô tả"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/gray_300">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_description_product"
+                    style="@style/edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    tools:ignore="InvalidId" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/layout_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_size_lg"
+                android:hint="Giá"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/gray_300">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_price_product"
+                    style="@style/edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_add_product"
+                style="@style/btn_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_size_lg"
+                android:text="@string/add_product" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

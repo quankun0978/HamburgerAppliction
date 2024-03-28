@@ -25,8 +25,24 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activity.MapShopActivity"
+            android:name=".activity.ProgressActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.ItemUpdateProduct"
+            android:exported="false" />
+        <activity
+            android:name=".activity.EditProductActivity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".activity.EditProductActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".fragment.FrameAddDishes" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".activity.ProductManagement"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".activity.PaymentActivity" -->
+        <!-- android:exported="false" > -->
         <activity
             android:name=".activity.MapUserActivity"
             android:exported="false" />
@@ -42,9 +58,6 @@
         <activity
             android:name=".activity.CartActivity"
             android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".activity.TestApi" -->
-        <!-- android:exported="false" > -->
-        <!-- </activity> -->
         <activity
             android:name=".activity.OrderTrackingActivity"
             android:exported="false" />

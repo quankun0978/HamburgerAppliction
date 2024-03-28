@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +22,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.group.hamburgerapplication.R;
 import com.group.hamburgerapplication.activity.ChangePasswordActivity;
 import com.group.hamburgerapplication.activity.LoginActivity;
+import com.group.hamburgerapplication.activity.OrderTrackingActivity;
+import com.group.hamburgerapplication.activity.ProductManagement;
 import com.group.hamburgerapplication.activity.UpdateInformationActivity;
 import com.group.hamburgerapplication.database.UserDatabase;
-
-import java.io.IOException;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,7 +35,7 @@ import java.io.IOException;
 public class AccountFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private Button btn_tracking,btn_edit_acc,btn_change_pw,btn_logout;
+    private Button btn_tracking,btn_edit_acc,btn_change_pw,btn_logout,btn_update_management;
 
     public AccountFragment() {
         // Required empty public constructor
@@ -70,8 +69,8 @@ public class AccountFragment extends Fragment {
         btn_tracking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getContext(), OrderTrackingActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getContext(), OrderTrackingActivity.class);
+                startActivity(intent);
             }
         });
         btn_change_pw.setOnClickListener(new View.OnClickListener() {
@@ -88,10 +87,19 @@ public class AccountFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        btn_update_management.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ProductManagement.class);
+                startActivity(intent);
+            }
+        });
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 handleLogout();
+
+
             }
         });
         return view;
@@ -102,6 +110,7 @@ public class AccountFragment extends Fragment {
         btn_change_pw = view.findViewById(R.id.btn_change_pw);
         btn_edit_acc = view.findViewById(R.id.btn_edit_acc);
         btn_logout=view.findViewById(R.id.btn_logout);
+        btn_update_management = view.findViewById(R.id.btn_update_management);
         // Inflate the layout for this fragment
     }
 
@@ -109,6 +118,8 @@ public class AccountFragment extends Fragment {
         FirebaseAuth.getInstance().signOut();
         Intent intent  = new Intent(getContext(), LoginActivity.class);
         startActivity(intent);
+
+
     }
     void handleRedireactLogin(){
        if(!UserDatabase.checkLogin()){

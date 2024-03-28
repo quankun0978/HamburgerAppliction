@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.group.hamburgerapplication.fragment.AddProduct;
 import com.group.hamburgerapplication.fragment.ComingFragment;
+import com.group.hamburgerapplication.fragment.EditProduct;
 import com.group.hamburgerapplication.fragment.HistoryFragment;
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
@@ -24,7 +26,6 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
         }
         return HistoryFragment.newInstance();
     }
-
     @Override
     public int getItemCount() {
         return 2;

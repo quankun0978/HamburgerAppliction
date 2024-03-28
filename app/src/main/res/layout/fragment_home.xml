@@ -22,8 +22,9 @@
         android:id="@+id/txt_sub_title"
         android:layout_width="wrap_content"
         android:text="Xin chào quý khách!"
+        android:textStyle="bold"
         android:fontFamily="@font/lobster_regular"
-        android:textSize="@dimen/text_size_md"
+        android:textSize="20dp"
         android:textColor="@color/black"
         android:layout_height="wrap_content"/>
 
@@ -32,5 +33,150 @@
        android:layout_marginVertical="@dimen/text_size_md"
         android:layout_height="wrap_content">
     </HorizontalScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_map_ship"
+        android:layout_marginHorizontal="@dimen/text_size_md"
+        android:background="@drawable/ic_launcher_btn"
+        android:elevation="@dimen/text_size_md"
+        android:padding="@dimen/text_size_sm"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/text_size_md"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/motorbike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/text_size_md"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="@dimen/text_size_md"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:text="Giao hàng tận nơi"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textColor="@color/gray_200"
+                android:textStyle="italic"
+                android:layout_width="wrap_content"
+                android:text="Hãy cho tôi biết vị trí của bạn"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:src="@drawable/backarrow"
+
+           android:background="@color/bg_color_hover"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_map_home"
+        android:layout_marginHorizontal="@dimen/text_size_md"
+        android:background="@drawable/ic_launcher_btn"
+        android:elevation="@dimen/text_size_md"
+        android:gravity="center_vertical"
+        android:padding="@dimen/text_size_sm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/text_size_md"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="@dimen/text_size_md"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:text="Mua mang về"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textColor="@color/gray_200"
+                android:textStyle="italic"
+                android:layout_width="wrap_content"
+                android:text="Vị trí của cửa hàng"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:src="@drawable/backarrow"
+            android:background="@color/bg_color_hover"
+            android:scaleType="fitEnd"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/text_size_md"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Liên hệ với Hamburger BunBuzz"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_md"
+      />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingHorizontal="@dimen/text_size_xxl"
+        android:layout_marginTop="@dimen/text_size_lg"
+        android:layout_marginRight="@dimen/text_size_sm"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+       >
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:contentDescription="@string/instagram"
+            android:scaleType="fitCenter"
+            android:src="@drawable/facebook" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            android:contentDescription="@string/email"
+            android:scaleType="fitCenter"
+            android:src="@drawable/gmail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:layout_weight="1"
+
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            android:contentDescription="@string/facebook"
+            android:scaleType="fitCenter"
+            android:src="@drawable/instagram"
+            />
+    </LinearLayout>
+
 
 </LinearLayout>

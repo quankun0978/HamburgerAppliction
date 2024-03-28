@@ -11,15 +11,16 @@
     tools:ignore="ExtraText">
 
 
-
     <LinearLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/text_size_md"
+        android:layout_marginTop="@dimen/text_size_md"
+        android:layout_marginRight="@dimen/text_size_md"
         android:background="@drawable/ic_launcher_edt"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center|center_horizontal"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="match_parent"
@@ -69,7 +71,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="@dimen/text_size_lg"
         android:layout_marginEnd="32dp"
-        android:width="@dimen/text_size_lg"
+        android:width="@dimen/text_size_xxl"
         android:backgroundTint="@color/gray"
         android:drawableEnd="@drawable/baseline_two_wheeler_24"
         android:elevation="@dimen/text_size_xl"
@@ -107,9 +109,9 @@
         android:id="@+id/btn_edit_acc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="@dimen/text_size_xl"
         android:layout_marginTop="@dimen/text_size_lg"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="@dimen/text_size_xl"
         android:backgroundTint="@color/gray"
         android:drawableEnd="@drawable/baseline_edit_square_24"
         android:gravity="center|start"
@@ -122,26 +124,38 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_change_pw" />
 
     <Button
-        android:id="@+id/btn_logout"
+        android:id="@+id/btn_update_management"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="@dimen/text_size_lg"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="@dimen/text_size_xl"
+        android:layout_marginEnd="@dimen/text_size_xl"
         android:backgroundTint="@color/gray"
-        android:drawableEnd="@drawable/baseline_logout_24"
+        android:drawableEnd="@drawable/baseline_assignment_add_24"
         android:gravity="center|start"
-        android:drawableTint="@color/black"
-        android:text="@string/logout"
+        android:text="Quản lý sản phẩm"
+        app:layout_constraintTop_toBottomOf="@+id/btn_edit_acc"
         android:textColor="@color/black"
         app:cornerRadius="@dimen/text_size_sm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_edit_acc" />
+        tools:ignore="DuplicateIds"
+        tools:layout_editor_absoluteY="400dp" />
 
-
-
+    <Button
+        android:id="@+id/btn_logout"
+        style="@style/btn_stroke_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_size_xl"
+        android:layout_marginTop="@dimen/text_size_lg"
+        android:layout_marginEnd="@dimen/text_size_xl"
+        android:height="@dimen/text_size_xxl"
+        android:text="@string/logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_update_management" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,25 +9,27 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
+
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.group.hamburgerapplication.R;
-import com.group.hamburgerapplication.database.UserDatabase;
 import com.group.hamburgerapplication.databinding.ActivityMainBinding;
 //import com.group.hamburgerapplication.fragment.AccountFragment;
 import com.group.hamburgerapplication.fragment.AccountFragment;
 import com.group.hamburgerapplication.fragment.HomeFragment;
 import com.group.hamburgerapplication.fragment.MenuFragment;
-import com.group.hamburgerapplication.fragment.SettingFragment;
 import com.group.hamburgerapplication.fragment.VoucherFragment;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private FloatingActionButton btn_cart;
-
+    private ImageButton notification ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +43,16 @@ public class MainActivity extends AppCompatActivity {
     }
     void init(){
         btn_cart=findViewById(R.id.btn_cart);
-
+        notification=findViewById(R.id.notification);
     }
     void initListener(){
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

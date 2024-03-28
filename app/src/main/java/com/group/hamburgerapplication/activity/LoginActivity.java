@@ -1,17 +1,22 @@
 package com.group.hamburgerapplication.activity;
 
+import static android.app.PendingIntent.getActivity;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -35,12 +40,13 @@ import com.group.hamburgerapplication.ultil.Ultils;
 public class LoginActivity extends AppCompatActivity {
     private TextView txt_forgot_password,txt_register;
     private EditText edt_email,edt_password;
-    private ProgressBar progressBar;
-    private Button btn_continue_google ,btn_login;
+    private Button btn_continue_google ,btn_login ;
+    ImageView img_back;
     private FirebaseAuth mAuth;
     private GoogleSignInClient googleSignInClient;
 
     GoogleSignInOptions googleSignInOptions;
+    private  Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,18 +58,31 @@ public class LoginActivity extends AppCompatActivity {
         txt_forgot_password=findViewById(R.id.txt_forgot_password);
         btn_continue_google=findViewById(R.id.btn_continue_google);
         btn_login=findViewById(R.id.btn_login);
+        img_back=findViewById(R.id.btn_back);
         txt_register=findViewById(R.id.txt_register);
         edt_email=findViewById(R.id.edt_email);
         edt_password=findViewById(R.id.edt_password);
-        progressBar=findViewById(R.id.progress_bar);
         mAuth = FirebaseAuth.getInstance();
         googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
         googleSignInClient = GoogleSignIn.getClient(getApplicationContext(), googleSignInOptions);
+
     }
     void initListener(){
+        dialog = new Dialog(LoginActivity.this);
+        dialog.setContentView(R.layout.activity_progress);
+        dialog.setCancelable(false); // Đặt cho Dialog không bị hủy khi nhấn nút Backq
+        Window window = dialog.getWindow();
+        if (window != null) {
+            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+            layoutParams.copyFrom(window.getAttributes());
+            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+            layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
+            window.setAttributes(layoutParams);
+        }
+
         txt_forgot_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +100,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(FuncHelper.validateEmail(edt_email.getText().toString(),getApplicationContext())&&FuncHelper.validatePassword(edt_password.getText().toString(),getApplicationContext())){
                     handleOnClickLogin(edt_email.getText().toString(),edt_password.getText().toString());
-                    progressBar.setVisibility(View.VISIBLE);
+//                    progressBar.setVisibility(View.VISIBLE);
+//                    dialog.dismiss();
+                    dialog.show();
+
                 }
             }
         });
@@ -92,7 +114,14 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = googleSignInClient.getSignInIntent();
                 // Start activity for result
                 startActivityForResult(intent, 100);
-                progressBar.setVisibility(View.VISIBLE);
+//                progressBar.setVisibility(View.VISIBLE);
+                dialog.show();
+            }
+        });
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
@@ -101,7 +130,8 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressBar.setVisibility(View.INVISIBLE);
+//                        progressBar.setVisibility(View.INVISIBLE);
+                        dialog.dismiss();
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
@@ -133,11 +163,6 @@ public class LoginActivity extends AppCompatActivity {
         if (requestCode == 100) {
             // When request code is equal to 100 initialize task
             Task<GoogleSignInAccount> signInAccountTask = GoogleSignIn.getSignedInAccountFromIntent(data);
-                  // check condition
-
-                // When google sign in successful initialize string
-                // Display Toast
-                // Initialize sign in account
                 try {
                     // Initialize sign in account
                     GoogleSignInAccount googleSignInAccount = signInAccountTask.getResult(ApiException.class);
@@ -145,13 +170,12 @@ public class LoginActivity extends AppCompatActivity {
                     // Check condition
                 } catch (ApiException e) {
                     Log.e("ERR", e.toString());
-                    progressBar.setVisibility(View.INVISIBLE);
+//                   dialog.dismiss();
                     e.printStackTrace();
                 }
             }
 
     }
-
     private void firebaseAuth(String idToken) {
         AuthCredential authCredential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -160,21 +184,16 @@ public class LoginActivity extends AppCompatActivity {
                 // Check condition
                 if (task.isSuccessful()) {
                     // When task is successful redirect to profile activity display Toast
-                    progressBar.setVisibility(View.INVISIBLE);
-                    UserDatabase.writeNewUser(UserDatabase.getCurrentUser().getUid(),null,UserDatabase.getCurrentUser().getEmail(),null,null,null);
-                    Ultils.displayToast(getApplicationContext(),"Đăng nhập thành công");
+                   dialog.dismiss();
+                    UserDatabase.writeNewUser(UserDatabase.getCurrentUser().getUid(), UserDatabase.getCurrentUser().getDisplayName(), UserDatabase.getCurrentUser().getEmail(), null, null, null);
+                    Ultils.displayToast(getApplicationContext(), "Đăng nhập thành công");
                     startActivity(new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-
                 } else {
                     // When task is unsuccessful display Toast
-                    Ultils.displayToast(getApplicationContext(),"Lỗi");
+                    Ultils.displayToast(getApplicationContext(), "Lỗi");
                 }
             }
         });
-
     }
-
-
-
 }
 
